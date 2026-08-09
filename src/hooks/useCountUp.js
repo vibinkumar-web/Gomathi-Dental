@@ -1,31 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 
-interface UseCountUpOptions {
-  end: number;
-  duration?: number;
-  start?: number;
-  decimals?: number;
-  enabled?: boolean;
-}
-
 export function useCountUp({
   end,
   duration = 2500,
   start = 0,
   decimals = 0,
   enabled = true,
-}: UseCountUpOptions) {
+}) {
   const [count, setCount] = useState(start);
-  const startTime = useRef<number | null>(null);
-  const rafId = useRef<number>(0);
+  const startTime = useRef(null);
+  const rafId = useRef(0);
 
   useEffect(() => {
     if (!enabled) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- resets the counter when re-disabled after counting (e.g. leaving the viewport)
       setCount(start);
       return;
     }
 
-    function animate(timestamp: number) {
+    function animate(timestamp) {
       if (!startTime.current) startTime.current = timestamp;
       const progress = Math.min((timestamp - startTime.current) / duration, 1);
 

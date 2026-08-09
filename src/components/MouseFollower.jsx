@@ -4,8 +4,8 @@ export function MouseFollower() {
   const [isVisible, setIsVisible] = useState(false);
   const position = useRef({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
-  const rafId = useRef<number>(0);
-  const divRef = useRef<HTMLDivElement>(null);
+  const rafId = useRef(0);
+  const divRef = useRef(null);
 
   useEffect(() => {
     // Hide on mobile
@@ -15,7 +15,7 @@ export function MouseFollower() {
     checkMobile();
     window.addEventListener('resize', checkMobile, { passive: true });
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       target.current = { x: e.clientX, y: e.clientY };
     };
 

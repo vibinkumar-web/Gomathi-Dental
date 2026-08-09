@@ -16,27 +16,6 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import { MdOutlineHealthAndSafety } from 'react-icons/md';
-import { type IconType } from 'react-icons';
-
-export interface Service {
-  id: number;
-  name: string;
-  description: string;
-  icon: IconType;
-  image: string;
-}
-
-export interface Feature {
-  id: number;
-  title: string;
-  description: string;
-  icon: IconType;
-}
-
-export interface TimelineEvent {
-  year: string;
-  description: string;
-}
 
 export const clinicInfo = {
   name: 'Gomathi Dental Clinic',
@@ -65,7 +44,7 @@ export const clinicInfo = {
   email: '',
 };
 
-export const services: Service[] = [
+export const services = [
   {
     id: 1,
     name: 'Teeth Alignment',
@@ -131,7 +110,7 @@ export const services: Service[] = [
   },
 ];
 
-export const features: Feature[] = [
+export const features = [
   {
     id: 1,
     title: 'RVG Digital X-Ray',
@@ -170,7 +149,7 @@ export const features: Feature[] = [
   },
 ];
 
-export const timeline: TimelineEvent[] = [
+export const timeline = [
   { year: '2010', description: 'Founded Gomathi Dental Clinic in Sankarankovil' },
   { year: '2015', description: 'Upgraded to RVG Digital X-Ray & Modern Equipment' },
   { year: '2024', description: '10,000+ Happy Patients & Counting' },

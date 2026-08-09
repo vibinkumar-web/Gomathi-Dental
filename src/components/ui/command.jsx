@@ -1,4 +1,3 @@
-import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
 import { SearchIcon } from "lucide-react"
 
@@ -14,7 +13,7 @@ import {
 function Command({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive>) {
+}) {
   return (
     <CommandPrimitive
       data-slot="command"
@@ -34,11 +33,6 @@ function CommandDialog({
   className,
   showCloseButton = true,
   ...props
-}: React.ComponentProps<typeof Dialog> & {
-  title?: string
-  description?: string
-  className?: string
-  showCloseButton?: boolean
 }) {
   return (
     <Dialog {...props}>
@@ -61,7 +55,7 @@ function CommandDialog({
 function CommandInput({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Input>) {
+}) {
   return (
     <div
       data-slot="command-input-wrapper"
@@ -83,7 +77,7 @@ function CommandInput({
 function CommandList({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.List>) {
+}) {
   return (
     <CommandPrimitive.List
       data-slot="command-list"
@@ -98,7 +92,7 @@ function CommandList({
 
 function CommandEmpty({
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Empty>) {
+}) {
   return (
     <CommandPrimitive.Empty
       data-slot="command-empty"
@@ -111,7 +105,7 @@ function CommandEmpty({
 function CommandGroup({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Group>) {
+}) {
   return (
     <CommandPrimitive.Group
       data-slot="command-group"
@@ -127,7 +121,7 @@ function CommandGroup({
 function CommandSeparator({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Separator>) {
+}) {
   return (
     <CommandPrimitive.Separator
       data-slot="command-separator"
@@ -140,7 +134,7 @@ function CommandSeparator({
 function CommandItem({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Item>) {
+}) {
   return (
     <CommandPrimitive.Item
       data-slot="command-item"
@@ -156,7 +150,7 @@ function CommandItem({
 function CommandShortcut({
   className,
   ...props
-}: React.ComponentProps<"span">) {
+}) {
   return (
     <span
       data-slot="command-shortcut"

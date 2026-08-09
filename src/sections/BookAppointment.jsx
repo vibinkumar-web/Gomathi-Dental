@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaCheck, FaShieldAlt, FaPhone, FaClock } from 'react-icons/fa';
 import { GradientMesh } from '@/components/GradientMesh';
@@ -14,12 +14,12 @@ export function BookAppointment() {
     date: '',
     message: '',
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const validate = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors = {};
     if (!formData.name || formData.name.length < 3) {
       newErrors.name = 'Name must be at least 3 characters';
     }
@@ -36,7 +36,7 @@ export function BookAppointment() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -53,7 +53,7 @@ export function BookAppointment() {
     setIsSuccess(false);
   };
 
-  const inputClass = (field: string) =>
+  const inputClass = (field) =>
     `w-full bg-white/5 border ${
       errors[field] ? 'border-red-500 focus:ring-red-500/20' : 'border-white/10 focus:border-blue-light focus:ring-blue-light/20'
     } rounded-xl px-4 py-3.5 text-white placeholder-medium-gray text-sm md:text-base outline-none transition-all duration-200 focus:ring-[3px]`;
@@ -87,7 +87,7 @@ export function BookAppointment() {
             </span>
             <h2 className="text-h2 text-white mb-4">Schedule Your Visit</h2>
             <p className="text-body-lg text-medium-gray">
-              Fill in your details and we'll confirm your appointment shortly.
+              Fill in your details and we&apos;ll confirm your appointment shortly.
             </p>
           </motion.div>
 
@@ -257,7 +257,7 @@ export function BookAppointment() {
                       Appointment Booked!
                     </h3>
                     <p className="text-body-lg text-white/80 mb-8 max-w-md mx-auto">
-                      Thank you! Your appointment request has been received. We'll contact you
+                      Thank you! Your appointment request has been received. We&apos;ll contact you
                       shortly to confirm.
                     </p>
 

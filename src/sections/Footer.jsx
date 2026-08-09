@@ -4,7 +4,7 @@ import { clinicInfo, quickLinks } from '@/data/siteData';
 import { getLenis } from '@/hooks/useLenis';
 
 export function Footer() {
-  const scrollTo = (href: string) => {
+  const scrollTo = (href) => {
     const lenis = getLenis();
     if (lenis) lenis.scrollTo(href, { offset: -80 });
   };

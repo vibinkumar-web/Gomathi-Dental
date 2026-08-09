@@ -25,10 +25,11 @@ export function Hero() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- flips to true post-mount to trigger the entrance animation
     setMounted(true);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id) => {
     const lenis = getLenis();
     if (lenis) {
       lenis.scrollTo(`#${id}`, { offset: -80 });

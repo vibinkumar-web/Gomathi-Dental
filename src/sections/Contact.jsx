@@ -39,10 +39,10 @@ export function Contact() {
               <span className="w-6 h-px bg-gradient-to-l from-transparent to-pink" />
             </span>
             <h2 className="text-h2 text-near-black mb-2">
-              We'd Love to <span className="gradient-text">Hear From You</span>
+              We&apos;d Love to <span className="gradient-text">Hear From You</span>
             </h2>
             <p className="text-body text-dark-gray max-w-lg mx-auto">
-              Visit us, call us, or send a message — we're always here for your dental needs.
+              Visit us, call us, or send a message — we&apos;re always here for your dental needs.
             </p>
           </motion.div>
 

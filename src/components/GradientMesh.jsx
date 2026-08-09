@@ -1,9 +1,4 @@
-interface GradientMeshProps {
-  className?: string;
-  variant?: 'dark' | 'light';
-}
-
-export function GradientMesh({ className = '', variant = 'dark' }: GradientMeshProps) {
+export function GradientMesh({ className = '', variant = 'dark' }) {
   const isDark = variant === 'dark';
 
   return (

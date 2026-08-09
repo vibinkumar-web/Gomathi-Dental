@@ -1,13 +1,5 @@
-import { useRef, useState, type ReactNode, type MouseEvent } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-
-interface MagneticButtonProps {
-  children: ReactNode;
-  className?: string;
-  strength?: number;
-  onClick?: () => void;
-  href?: string;
-}
 
 export function MagneticButton({
   children,
@@ -15,11 +7,11 @@ export function MagneticButton({
   strength = 0.3,
   onClick,
   href,
-}: MagneticButtonProps) {
-  const ref = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
+}) {
+  const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = (e) => {
     const element = ref.current;
     if (!element) return;
 
@@ -41,7 +33,7 @@ export function MagneticButton({
   };
 
   const props = {
-    ref: ref as React.RefObject<HTMLButtonElement & HTMLAnchorElement>,
+    ref,
     className,
     onMouseMove: handleMouseMove,
     onMouseLeave: handleMouseLeave,
@@ -56,7 +48,7 @@ export function MagneticButton({
     return (
       <a
         {...props}
-        ref={ref as React.RefObject<HTMLAnchorElement>}
+        ref={ref}
         href={href}
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -69,7 +61,7 @@ export function MagneticButton({
   return (
     <motion.button
       {...props}
-      ref={ref as React.RefObject<HTMLButtonElement>}
+      ref={ref}
       whileTap={{ scale: 0.97 }}
     >
       {children}

@@ -38,7 +38,7 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleSectionObserver);
   }, []);
 
-  const scrollTo = (href: string) => {
+  const scrollTo = (href) => {
     const id = href.replace('#', '');
     const lenis = getLenis();
     const navEl = document.querySelector('nav');
