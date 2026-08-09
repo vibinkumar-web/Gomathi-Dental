@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaPhone, FaCalendarCheck } from 'react-icons/fa';
 import { MagneticButton } from './MagneticButton';
 import { getLenis } from '@/hooks/useLenis';
-import { quickLinks, clinicInfo } from '@/data/siteData';
+import { quickLinks } from '@/data/siteData';
 
 const navLinks = quickLinks.filter((l) => l.label !== 'Book Appointment');
 
