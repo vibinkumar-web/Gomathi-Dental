@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaChevronDown, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaChevronDown, FaCalendarCheck } from 'react-icons/fa';
 import { GradientMesh } from '@/components/GradientMesh';
 import { FloatingParticles } from '@/components/FloatingParticles';
 import { MagneticButton } from '@/components/MagneticButton';
@@ -94,11 +94,11 @@ export function Hero() {
               className="flex flex-col sm:flex-row gap-4 mb-4"
             >
               <MagneticButton
-                href={`https://wa.me/91${clinicInfo.whatsapp}`}
+                href="https://www.clinicia.com/calendar/book?u=63852"
                 className="font-hero bg-pink text-white px-9 py-5 rounded-full text-lg md:text-xl font-bold shadow-glow-pink hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3"
               >
-                <FaWhatsapp className="text-xl" />
-                WhatsApp
+                <FaCalendarCheck className="text-xl" />
+                Book Appointment
               </MagneticButton>
               <MagneticButton
                 href={`tel:${clinicInfo.phones[0].replace(/\s/g, '')}`}

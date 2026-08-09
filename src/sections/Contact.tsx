@@ -79,7 +79,7 @@ export function Contact() {
                       <p className="text-[10px] uppercase tracking-widest text-medium-gray font-semibold mb-0.5">Address</p>
                       <p className="text-white/85 text-xs md:text-sm leading-relaxed">{clinicInfo.address.full}</p>
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=Gomathi+Dental+Clinic+Sankarankovil"
+                        href="https://maps.app.goo.gl/v2WmYPEZTsisiqDW8"
                         target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 mt-1 text-xs text-pink hover:text-pink-light transition-colors font-medium"
                       >
@@ -198,7 +198,7 @@ export function Contact() {
                     <span className="text-xs font-semibold text-near-black">Gomathi Dental Clinic</span>
                   </div>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Gomathi+Dental+Clinic+Sankarankovil"
+                    href="https://maps.app.goo.gl/v2WmYPEZTsisiqDW8"
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-[10px] text-blue hover:text-pink font-semibold transition-colors"
                   >
@@ -209,7 +209,7 @@ export function Contact() {
                 <div className="w-full flex-1 min-h-[180px]">
                   <iframe
                     title="Gomathi Dental Clinic Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.0!2d77.5415!3d9.1775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMTAnMzguMCJOIDc3wrAzMiczMy40IkU!5e0!3m2!1sen!2sin!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.5!2d77.5395342!3d9.1746101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06978408700719%3A0xe50fc7daebf911f8!2sGOMATHI%20DENTAL%20CARE!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                     width="100%" height="100%"
                     style={{ border: 0, width: '100%', height: '100%', minHeight: '180px', display: 'block' }}
                     allowFullScreen loading="lazy"

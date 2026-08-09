@@ -107,7 +107,7 @@ export function Footer() {
                 <FaPhone className="text-xs" />
               </a>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Gomathi+Dental+Clinic+Sankarankovil"
+                href="https://maps.app.goo.gl/v2WmYPEZTsisiqDW8"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Location"

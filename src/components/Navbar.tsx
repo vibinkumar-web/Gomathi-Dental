@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPhone, FaCalendarCheck } from 'react-icons/fa';
 import { MagneticButton } from './MagneticButton';
 import { getLenis } from '@/hooks/useLenis';
 import { quickLinks, clinicInfo } from '@/data/siteData';
@@ -109,11 +109,11 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <MagneticButton
-              href={`tel:${clinicInfo.phones[0].replace(/\s/g, '')}`}
+              href="https://www.clinicia.com/calendar/book?u=63852"
               className="bg-pink text-white px-7 py-3 rounded-full text-sm font-semibold shadow-glow-pink hover:scale-105 transition-transform duration-300 flex items-center gap-2"
             >
-              <FaPhone className="text-xs" />
-              Call Now
+              <FaCalendarCheck className="text-xs" />
+              Book Appointment
             </MagneticButton>
           </div>
 

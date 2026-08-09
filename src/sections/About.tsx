@@ -4,6 +4,7 @@ import { GradientMesh } from '@/components/GradientMesh';
 import { FloatingParticles } from '@/components/FloatingParticles';
 import { clinicInfo } from '@/data/siteData';
 import doctorImage from '@/images/Main.jpeg';
+import consultantImage from '@/images/main2.jpeg';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -17,8 +18,21 @@ const scaleUp = {
   viewport: { once: true, amount: 0.2 },
 };
 
+const consultants = [
+  {
+    image: doctorImage,
+    name: clinicInfo.doctor.name,
+    qualification: clinicInfo.doctor.qualification,
+  },
+  {
+    image: consultantImage,
+    name: 'Dr. Sujitha',
+    qualification: 'BDS',
+  },
+];
+
 const stats = [
-  { value: '15+', label: 'Years of Experience' },
+  { value: '5+', label: 'Years of Experience' },
   { value: '10,000+', label: 'Patients Treated' },
   { value: '9', label: 'Specialized Services' },
 ];
@@ -67,7 +81,7 @@ export function About() {
             </h2>
             <p className="text-body-lg text-dark-gray max-w-2xl mx-auto">
               Providing world-class dental treatment with advanced technology and compassionate
-              care in Sankarankovil since 2010.
+              care in Sankarankovil since 2020.
             </p>
           </motion.div>
 
@@ -131,20 +145,36 @@ export function About() {
               </div>
             </div>
 
-            {/* Right Column — Doctor Image */}
-            <motion.div
-              {...scaleUp}
-              transition={{ duration: 0.7 }}
-              className="flex justify-center w-full"
-            >
-              <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[380px] aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-light-gray shadow-card">
-                <img
-                  src={doctorImage}
-                  alt={clinicInfo.doctor.name}
-                  className="w-full h-full object-cover object-top"
-                />
+            {/* Right Column — Consultants */}
+            <div className="w-full max-w-[380px] mx-auto lg:max-w-none">
+              <h3 className="text-h4 text-near-black font-semibold text-center lg:text-left mb-4">
+                Consultants
+              </h3>
+              <div className="grid grid-cols-2 gap-4 sm:gap-5">
+                {consultants.map((consultant, i) => (
+                <motion.div
+                  key={consultant.name}
+                  {...scaleUp}
+                  transition={{ duration: 0.7, delay: i * 0.12 }}
+                  className="relative aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-light-gray shadow-card group"
+                >
+                  <img
+                    src={consultant.image}
+                    alt={consultant.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent p-3 sm:p-4">
+                    <h4 className="text-white font-semibold text-sm sm:text-base leading-tight">
+                      {consultant.name}
+                    </h4>
+                    <p className="text-white/70 text-[11px] sm:text-xs uppercase tracking-wide mt-0.5">
+                      {consultant.qualification}
+                    </p>
+                  </div>
+                </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
